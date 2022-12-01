@@ -1,0 +1,8 @@
+[package]
+name = "deko3d"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+deko3d-sys = { version = "0.1.0", path = "./deko3d-sys" }
+bitflags = "1.3"
