@@ -71,18 +71,61 @@
 
 #endif
 
-DK_DECL_HANDLE(Device);
-DK_DECL_HANDLE(MemBlock);
-DK_DECL_OPAQUE(Fence, 8, 64);
-DK_DECL_OPAQUE(Variable, 8, 16);
-DK_DECL_HANDLE(CmdBuf);
-DK_DECL_HANDLE(Queue);
-DK_DECL_OPAQUE(Shader, 8, 128);
-DK_DECL_OPAQUE(ImageLayout, 8, 128);
-DK_DECL_OPAQUE(Image, 8, 128);
-DK_DECL_OPAQUE(ImageDescriptor, 4, 32);
-DK_DECL_OPAQUE(SamplerDescriptor, 4, 32);
-DK_DECL_HANDLE(Swapchain);
+typedef struct tag_DkDevice *DkDevice;
+typedef struct tag_DkMemBlock *DkMemBlock;
+
+typedef struct DkFence
+{
+	alignas(8) uint8_t _storage[64];
+} DkFence;
+
+typedef struct DkVariable
+{
+	alignas(8) uint8_t _storage[16];
+} DkVariable;
+
+typedef struct tag_DkCmdBuf *DkCmdBuf;
+typedef struct tag_DkQueue *DkQueue;
+
+typedef struct DkShader
+{
+	alignas(8) uint8_t _storage[128];
+} DkShader;
+
+typedef struct DkImageLayout
+{
+	alignas(8) uint8_t _storage[128];
+} DkImageLayout;
+
+typedef struct DkImage
+{
+	alignas(8) uint8_t _storage[128];
+} DkImage;
+
+typedef struct DkImageDescriptor
+{
+	alignas(8) uint8_t _storage[32];
+} DkImageDescriptor;
+
+typedef struct DkSamplerDescriptor
+{
+	alignas(8) uint8_t _storage[32];
+} DkSamplerDescriptor;
+
+typedef struct tag_DkSwapchain *DkSwapchain;
+
+// DK_DECL_HANDLE(Device);
+// DK_DECL_HANDLE(MemBlock);
+// DK_DECL_OPAQUE(Fence, 8, 64);
+// DK_DECL_OPAQUE(Variable, 8, 16);
+// DK_DECL_HANDLE(CmdBuf);
+// DK_DECL_HANDLE(Queue);
+// DK_DECL_OPAQUE(Shader, 8, 128);
+// DK_DECL_OPAQUE(ImageLayout, 8, 128);
+// DK_DECL_OPAQUE(Image, 8, 128);
+// DK_DECL_OPAQUE(ImageDescriptor, 4, 32);
+// DK_DECL_OPAQUE(SamplerDescriptor, 4, 32);
+// DK_DECL_HANDLE(Swapchain);
 
 #undef DK_DECL_HANDLE
 #undef DK_DECL_OPAQUE
